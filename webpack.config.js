@@ -19,7 +19,21 @@ module.exports = {
         //   "./loader/demo/同步loder.js",
         //   "./loader/demo/raw loader.js",
         // ],
-        loader:"./loader/clean-log-loader.js"
+        loader: "./loader/clean-log-loader.js",
+      },
+      {
+        test: /\.js$/,
+        loader: "./loader/author-loader/index.js",
+        options: {
+          author: "SiNan",
+        },
+      },
+      {
+        test: /\.js$/,
+        loader: "./loader/babel-loader/index.js",
+        options: {
+          presets: ["@babel/preset-env"],
+        },
       },
     ],
   },
