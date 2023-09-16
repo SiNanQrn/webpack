@@ -43,7 +43,7 @@ module.exports = {
       {
         test: /\.css$/,
         // use: ["style-loader", "css-loader"],
-        loader: "./loader/style-loader/index.js",
+        use: ["./loader/style-loader/index.js", "css-loader"],
       },
     ],
   },
