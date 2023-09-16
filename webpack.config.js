@@ -35,6 +35,16 @@ module.exports = {
           presets: ["@babel/preset-env"],
         },
       },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        loader: "./loader/file-loader/index.js",
+        type: "javascript/auto", // 解决图片重复打包问题
+      },
+      {
+        test: /\.css$/,
+        // use: ["style-loader", "css-loader"],
+        loader: "./loader/style-loader/index.js",
+      },
     ],
   },
   plugins: [
