@@ -10,7 +10,8 @@ class TestPlugin {
    *  4、执行剩下的编译流程（触发事件的 hooks 事件）
    */
   apply(compiler) {
-    console.log("打印apply()");
+    debugger;
+    console.log("打印compiler", compiler);
 
     // 由文档所知 environments 是同步(SyncHook)钩子，所以要用 tap 注册
     compiler.hooks.environment.tap("TestPlugin", () => {
