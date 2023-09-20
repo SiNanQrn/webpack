@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TestPlugin = require("./plugin/test-plugin");
+const AnnotationPlugin = require("./plugin/annotation-plugin");
 
 module.exports = {
   mode: "development",
@@ -22,13 +23,13 @@ module.exports = {
         // ],
         loader: "./loader/clean-log-loader.js",
       },
-      {
-        test: /\.js$/,
-        loader: "./loader/author-loader/index.js",
-        options: {
-          author: "SiNan",
-        },
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: "./loader/author-loader/index.js",
+      //   options: {
+      //     author: "SiNan",
+      //   },
+      // },
       {
         test: /\.js$/,
         loader: "./loader/babel-loader/index.js",
@@ -52,6 +53,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
     }),
-    new TestPlugin(),
+    // new TestPlugin(),
+    new AnnotationPlugin({
+      author:'SN'
+    }),
   ],
 };
