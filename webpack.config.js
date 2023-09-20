@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TestPlugin = require("./plugin/test-plugin");
 const AnnotationPlugin = require("./plugin/annotation-plugin");
+const ClearPlugin = require("./plugin/clear-plugin");
 
 module.exports = {
   mode: "development",
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "js/[name].js",
-    clean: true,
+    // clean: true,
   },
   module: {
     rules: [
@@ -55,7 +56,8 @@ module.exports = {
     }),
     // new TestPlugin(),
     new AnnotationPlugin({
-      author:'SN'
+      author: "SN",
     }),
+    new ClearPlugin(),
   ],
 };

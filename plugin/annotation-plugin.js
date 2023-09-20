@@ -1,6 +1,5 @@
 class AnnotationPlugin {
   constructor(option = {}) {
-    console.log("打印", option);
     this.options = option;
   }
 
