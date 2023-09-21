@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TestPlugin = require("./plugin/test-plugin");
 const AnnotationPlugin = require("./plugin/annotation-plugin");
 const ClearPlugin = require("./plugin/clear-plugin");
+const AnalyzePlugin = require("./plugin/analyze-plugin");
 
 module.exports = {
   mode: "development",
@@ -59,5 +60,6 @@ module.exports = {
       author: "SN",
     }),
     new ClearPlugin(),
+    new AnalyzePlugin(),
   ],
 };
