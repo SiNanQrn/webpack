@@ -5,7 +5,7 @@ class AnalyzePlugin {
       let sources = `# 分析打包资源 \n| 资源名称 | 大小 |\n| --- | --- |`;
 
       assets.forEach(([filename, file]) => {
-        sources += `\n|${filename} | ${Math.round(file.size() / 1024)}kb|`;
+        sources += `\n| ${filename} | ${Math.round(file.size() / 1024)}kb |`;
       });
 
       // 添加资源
